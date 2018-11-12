@@ -1,5 +1,5 @@
-# generator-easy-koa [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> a generator for a koa
+# generator-easy-vue [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+> a generator for a vue
 
 ## 
 > 此项目为开箱即用的vue项目生成器
@@ -57,7 +57,7 @@ npm run prestart                预渲染骨架屏(only once)
 
 ## skeleton
 ```
-npm run prestart       to build a template if you need a skeleton ()
+npm run prestart       to build a template if you need a skeleton (only once)
 npm run dev
 npm run build
 ```
@@ -110,11 +110,11 @@ cssnano-preset-advanced
 MIT © [wangmeng](https://github.com/501981732)
 
 
-[npm-image]: https://badge.fury.io/js/generator-easy-koa.svg
-[npm-url]: https://npmjs.org/package/generator-easy-koa
-[travis-image]: https://travis-ci.org/501981732/generator-easy-koa.svg?branch=master
-[travis-url]: https://travis-ci.org/501981732/generator-easy-koa
-[daviddm-image]: https://david-dm.org/501981732/generator-easy-koa.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/501981732/generator-easy-koa
-[coveralls-image]: https://coveralls.io/repos/501981732/generator-easy-koa/badge.svg
-[coveralls-url]: https://coveralls.io/r/501981732/generator-easy-koa
+[npm-image]: https://badge.fury.io/js/generator-easy-vue.svg
+[npm-url]: https://npmjs.org/package/generator-easy-vue
+[travis-image]: https://travis-ci.org/501981732/generator-easy-vue.svg?branch=master
+[travis-url]: https://travis-ci.org/501981732/generator-easy-vue
+[daviddm-image]: https://david-dm.org/501981732/generator-easy-vue.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/501981732/generator-easy-vue
+[coveralls-image]: https://coveralls.io/repos/501981732/generator-easy-vue/badge.svg
+[coveralls-url]: https://coveralls.io/r/501981732/generator-easy-vue
