@@ -23,14 +23,13 @@
 16. npm/yarn/bower...
 ```
 
+> 初始化项目
 <img src="https://github.com/501981732/generator-easy-vue/blob/master/screenshots/a.gif?raw=true" />
-
-<img src="https://github.com/501981732/generator-easy-vue/blob/master/screenshots/a2.gif?raw=true" />
-
+> 初始化骨架屏
 <img src="https://github.com/501981732/generator-easy-vue/blob/master/screenshots/a3.gif?raw=true" />
-
+> 自动生成页面
 <img src="https://github.com/501981732/generator-easy-vue/blob/master/screenshots/a4.gif?raw=true" />
-
+> 骨架屏效果
 <img src="https://github.com/501981732/generator-easy-vue/blob/master/screenshots/a5.gif?raw=true" />
 ## Installation
 
