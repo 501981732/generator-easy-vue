@@ -21,6 +21,19 @@ baseWebpackConfig.module.rules.forEach((item,index) => {
     baseWebpackConfig.module.rules[index].use = item.use.filter(Boolean)
   }
 })
+<% if(projectType =='MPA'){ %>
+// 多页面配置
+const glob = require('glob');
+const htmls = glob.sync('./src/modules/**/*.html').map(function (item) {
+  var names = item.split('/')
+  return new HtmlWebpackPlugin({
+    // filename: './'+ names[2]+'/'+names[4],    //相当于url
+    filename: './' + names[4],    //相当于url  './main.html'
+    template: item,               //模板路径    './src/modules/**/*.html'
+    inject: true,
+    chunks:[item.slice(6, -5),'vendor','manifest']
+  });
+});<% }%>
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -61,11 +74,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    <% if(projectType =='SPA'){ %>
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    }),
+    }),<% }%>
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -82,7 +96,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   webpackConfig: require('./webpack.skeleton.conf'),
     //   quiet: true
     // }),
-  ]
+  ]<% if(projectType =='MPA'){ %>.concat(htmls)<%}%>
 })
 
 module.exports = new Promise((resolve, reject) => {

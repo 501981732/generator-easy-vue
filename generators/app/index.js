@@ -37,9 +37,21 @@ module.exports = class extends Generator {
       message: 'Your email',
       default: this.user.git.email()
     }, {
+      name: 'projectType',
+      type: 'list',
+      message: 'Which type application do you want to build ?',
+      choices: [{
+        name: 'SPA',
+        value: 'SPA',
+        checked: true
+      }, {
+        name: 'MPA',
+        value: 'MPA'
+      },]
+    },{
       name: 'reset',
       type: 'list',
-      message: 'Choose a way  to reset your css',
+      message: 'Choose a way to reset your css',
       choices: [{
         name: 'reset.css',
         value: 'reset.css',
@@ -133,12 +145,8 @@ module.exports = class extends Generator {
       //需要加工的文件使用数组
       'build/build.js',
       'build/check-versions.js',
-      'build/utils.js',
       'build/logo.png',
       'build/vue-loader.conf.js',
-      'build/webpack.base.conf.js',
-      'build/webpack.dev.conf.js',
-      'build/webpack.prod.conf.js',
       'config/dev.env.js',
       'config/prod.env.js',
       'src/assets/css/common.css',
@@ -151,7 +159,6 @@ module.exports = class extends Generator {
       'src/plugins/',
       'src/router/',
       'src/utils/',
-      'src/App.vue',
       'static/.gitkeep',
       '.babelrc',
       '.editorconfig',
@@ -164,12 +171,15 @@ module.exports = class extends Generator {
     // fix linux 添加隐藏文件
     target = [...target,
       ['_package.json', 'package.json'],
-      ['src/_main.js', 'src/main.js'],
       ['_postcssrc.js', '.postcssrc.js'],
       ['config/_index.js', 'config/index.js'],
       ['_index.html', 'index.html'],
       ['src/components/_x-alert.vue', 'src/components/x-alert.vue'],
       ['src/pages/_HelloWorld.vue', 'src/pages/HelloWorld.vue'],
+      ['build/_webpack.base.conf.js', 'build/webpack.base.conf.js'],
+      ['build/_webpack.dev.conf.js', 'build/webpack.dev.conf.js'],
+      ['build/_webpack.prod.conf.js', 'build/webpack.prod.conf.js'],
+      ['build/_utils.js', 'build/utils.js',],
     ]
     // 是否添加单元测试
     // this.props.test && target.push('test/index.spec.js')
@@ -181,6 +191,9 @@ module.exports = class extends Generator {
         'src/components/skeleton.vue',
         'src/skeleton.entry.js',
         'skeleton.js')
+    // 配置多页面
+    this.props.projectType == 'SPA' && target.push(['src/_main.js', 'src/main.js'],'src/App.vue',)
+    this.props.projectType == 'MPA' && target.push('src/modules/index/index.html','src/modules/index/index.vue',['src/modules/index/_index.js','src/modules/index/index.js'])
     target.forEach(item => {
       let toFile, fromFile;
       if (Array.isArray(item)) {

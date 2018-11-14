@@ -37,7 +37,7 @@ exports.cssLoaders = function (options) {
       loaders.push({
         loader: loader + '-loader',
         options: Object.assign({}, loaderOptions, {
-          sourceMap: options.sourceMap
+          sourceMap: options.sourceMap,
         })
       })
     }
@@ -99,3 +99,14 @@ exports.createNotifierCallback = () => {
     })
   }
 }
+// 多页面entry
+<% if (projectType == 'MPA') {%>
+const glob = require('glob')
+exports.getEntry = (globPath,type='js') => {
+  return glob.sync(globPath).reduce(function (prev, curr) {
+    type == 'js' ? prev[curr.slice(6, -3)] = curr :  prev[curr.slice(6, -5)] = curr
+    return prev;
+  }, {});
+}<%}%>
+// { 'module/fairs/index': './src/module/fairs/index.js',
+//   'module/shop/index': './src/module/shop/index.js' }

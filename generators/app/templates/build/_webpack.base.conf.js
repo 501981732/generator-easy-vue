@@ -18,10 +18,12 @@ const IMAGE_LOADER_QUERY = ISPROD ? `&name=${IMAGE_NAME}&outputPath=/img&publicP
 const IMAGELOADER = ISPROD ? `image-webpack-loader?{mozjpeg: {progressive: true,quality: 65},pngquant:{quality: "55-90", speed: 4}}` : null
 
 module.exports = {
-  context: path.resolve(__dirname, '../'),
+  context: path.resolve(__dirname, '../'),<% if (projectType == 'SPA') {%>
   entry: {
     app: './src/main.js'
-  },
+  },<% } else { %>
+  entry: utils.getEntry('./src/modules/**/*.js'), // 获得入口js文件,
+  <% }%>
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -89,9 +91,9 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   },
-  // externals: {  
-  //   'vue': 'Vue',  
-  //   'vue-router': 'VueRouter',  
+  // externals: {
+  //   'vue': 'Vue',
+  //   'vue-router': 'VueRouter',
   //   'axios': 'axios',
   // }
 }

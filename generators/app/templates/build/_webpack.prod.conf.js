@@ -14,7 +14,17 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
 // const OmmitCSSPlugin = require('./ommit-css-webpack-plugin')
 const env = require('../config/prod.env')
-
+<% if(projectType =='MPA'){ %>
+// 多页面配置
+var glob = require('glob');
+var htmls = glob.sync('./src/modules/**/*.html').map(function (item) {
+  return new HtmlWebpackPlugin({
+    filename: './' + item.slice(6), //   './modules/xx/xx.html'
+    template: item,                  //    './src/modules/**/*.html' 模板位置
+    inject: true,
+    chunks:[item.slice(6, -5),'vendor','manifest']  // '对应entry'
+  });
+});<% }%>
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -39,7 +49,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
-          warnings: false
+          warnings: false,
+          drop_console: true,//删除所有的 `console` 语句，可以兼容ie浏览器
         }
       },
       sourceMap: config.build.productionSourceMap,
@@ -50,12 +61,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       // publicPath: config.build.cssPublicPath,
       allChunks: true,
     }),
-    
+
     // skeleton
     // new SkeletonWebpackPlugin({
     //   webpackConfig: require('./webpack.skeleton.conf'),
@@ -73,6 +84,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
+<% if(projectType =='SPA'){ %>
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index.html',
@@ -86,7 +98,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
-    }),
+    }),<%}%>
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
@@ -129,7 +141,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ])
-  ]
+  ]<% if(projectType =='MPA'){ %>.concat(htmls)<%}%>
 })
 
 if (config.build.productionGzip) {
