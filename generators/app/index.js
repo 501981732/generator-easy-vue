@@ -99,12 +99,13 @@ module.exports = class extends Generator {
         type: 'confirm', // 非必填 默认text ‘confirm’ 是选择输入‘YES/NO’
         name: 'vuex',
         message: 'Do you need a initialized vuex ?',
-        default: true
+        default: true,
+        store: true
       },{
         type: 'text', // 非必填 默认text ‘confirm’ 是选择输入‘YES/NO’
         name: 'imagePublicPath',
         message: 'Do you need a imagePublicPath ?',
-        store: true
+        store: true   //本地保留配置
       },{
         type: 'input', // 非必填 默认text ‘confirm’ 是选择输入‘YES/NO’
         name: 'publicPath',
@@ -162,7 +163,6 @@ module.exports = class extends Generator {
       'static/.gitkeep',
       '.babelrc',
       '.editorconfig',
-      '.gitignore',
       'README.md',
       'yarn.lock',
       'package-lock.json'
@@ -170,6 +170,7 @@ module.exports = class extends Generator {
 
     // fix linux 添加隐藏文件
     target = [...target,
+      ['_gitignore','.gitignore'],
       ['_package.json', 'package.json'],
       ['_postcssrc.js', '.postcssrc.js'],
       ['config/_index.js', 'config/index.js'],

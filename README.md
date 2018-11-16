@@ -1,4 +1,4 @@
-# generator-easy-vue [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-easy-vue 
 > a generator for a vue
 
 ## 
@@ -21,6 +21,9 @@
 14. 跨域反向代理案例
 15. 单元测试和e2e todo 
 16. npm/yarn/bower...
+
+0.1.4 增加多页面应用
+0.1.8 增加一键生成多页面应用
 ```
 
 > 初始化项目
@@ -50,6 +53,7 @@ Then generate your new project:
 ```base
 yo easy-vue   一键生成可配置项目
 yo easy-vue:page pageName  一键生成page
+yo easy-vue:mpage pageName  一键生成mutil-page(if you choose MPA)
 yo easy-vue:imagePublicPath path...  上线前配置imagePublicPath
 yo easy-vue:publicPath path...  上线前配置assentPublicPath
 npm run prestart                预渲染骨架屏(only once)
