@@ -1,6 +1,6 @@
 {
   "name": "generator-easy-vue",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "a  generator for a multifunctional vue project ",
   "homepage": "https://github.com/501981732/easy-vue",
   "author": {
@@ -20,6 +20,7 @@
     "rem",
     "MPA",
     "multi-page",
+    "jsdoc",
     "yeoman-generator"
   ],
   "devDependencies": {
