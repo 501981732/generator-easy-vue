@@ -1,0 +1,34 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": ["./src/"],
+        "exclude": [],
+        "includePattern": "\\.(vue|js)$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+        "node_modules/jsdoc-vue",
+        "plugins/markdown",
+        "plugins/summarize"
+    ],
+    "markdown": {
+
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": true
+        }
+    },
+    "opts": {
+        "template": "templates/default",
+        "encoding": "utf8",
+        "destination": "./jsdoc/",
+        "recurse": true,
+        "package": "./package.json",
+        "reademe": "./READEME.md"
+    }
+}

@@ -1,89 +1,94 @@
 {
-  "name": "generator-easy-vue",
-  "version": "0.1.9",
-  "description": "a  generator for a multifunctional vue project ",
-  "homepage": "https://github.com/501981732/easy-vue",
-  "author": {
-    "name": "wangmeng",
-    "email": "501981732@qq.com",
-    "url": "https://github.com/501981732"
-  },
-  "files": [
-    "generators"
-  ],
-  "main": "generators/index.js",
-  "keywords": [
-    "generator",
-    "vue",
-    "skeleton",
-    "vw",
-    "rem",
-    "MPA",
-    "multi-page",
-    "jsdoc",
-    "yeoman-generator"
-  ],
-  "devDependencies": {
-    "yeoman-test": "^1.7.0",
-    "yeoman-assert": "^3.1.0",
-    "coveralls": "^3.0.0",
-    "eslint": "^5.4.0",
-    "prettier": "^1.11.1",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.2",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-config-xo": "^0.24.2",
-    "jest": "^23.5.0"
-  },
-  "engines": {
-    "npm": ">= 4.0.0"
-  },
-  "dependencies": {
-    "yeoman-generator": "^2.0.1",
-    "chalk": "^2.1.0",
-    "yosay": "^2.0.1"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "xo",
-      "prettier"
-    ],
-    "env": {
-      "jest": true,
-      "node": true
+    "name": "generator-easy-vue",
+    "version": "0.2.7",
+    "description": "a  generator for a super vue project ",
+    "homepage": "https://github.com/501981732/easy-vue",
+    "author": {
+        "name": "wangmeng",
+        "email": "501981732@qq.com",
+        "url": "https://github.com/501981732"
     },
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "printWidth": 90
-        }
-      ]
+    "files": [
+        "generators"
+    ],
+    "main": "generators/index.js",
+    "keywords": [
+        "generator",
+        "vue",
+        "skeleton",
+        "vw",
+        "rem",
+        "MPA",
+        "dll",
+        "multi-page",
+        "jsdoc",
+        "yeoman-generator",
+        "eslint",
+        "prettier",
+        "lint-staged",
+        "husky"
+    ],
+    "devDependencies": {
+        "yeoman-test": "^1.7.0",
+        "yeoman-assert": "^3.1.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^5.4.0",
+        "prettier": "^1.11.1",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.2.2",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-prettier": "^2.6.0",
+        "eslint-config-xo": "^0.24.2",
+        "jest": "^23.5.0"
     },
-    "plugins": [
-      "prettier"
-    ]
-  },
-  "scripts": {
-    "pretest": "eslint .",
-    "precommit": "lint-staged",
-    "test": "jest"
-  },
-  "repository": "501981732/generator-easy-vue",
-  "license": "MIT"
+    "engines": {
+        "npm": ">= 4.0.0"
+    },
+    "dependencies": {
+        "yeoman-generator": "^2.0.1",
+        "chalk": "^2.1.0",
+        "yosay": "^2.0.1"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint --fix",
+            "git add"
+        ],
+        "*.json": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "xo",
+            "prettier"
+        ],
+        "env": {
+            "jest": true,
+            "node": true
+        },
+        "rules": {
+            "prettier/prettier": [
+                "error",
+                {
+                    "singleQuote": true,
+                    "printWidth": 90
+                }
+            ]
+        },
+        "plugins": [
+            "prettier"
+        ]
+    },
+    "scripts": {
+        "pretest": "eslint .",
+        "precommit": "lint-staged",
+        "test": "jest"
+    },
+    "repository": "501981732/generator-easy-vue",
+    "license": "MIT"
 }

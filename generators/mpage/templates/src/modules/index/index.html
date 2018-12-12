@@ -4,13 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>main</title>
+  <title><%= projectName %></title><% if(dns) {%>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <% for(var i of dns.split(',')){ %><link rel="dns-prefetch" href="<%= i%>"><% }%><%}%>
 </head>
 
 <body>
   <div id="app">
-    <!--vue-ssr-outlet-->
+  <!--vue-ssr-outlet-->
   </div><!-- built files will be auto injected -->
+  <% if(layout === 'vw'){ %>
   <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
   <script>
   window.onload = function() {
@@ -18,7 +21,7 @@
       hacks: window.viewportUnitsBuggyfillHacks
     });
   }
-
+<% }%>
   </script>
 </body>
 

@@ -11,7 +11,10 @@ module.exports = class extends Generator {
         console.log(opts)
     }
     initializing() {
-        this.argument('mpage', { type: String, required: true });
+        this.argument('mpage', {
+            type: String,
+            required: true
+        });
     }
     prompting() {}
 
@@ -19,7 +22,7 @@ module.exports = class extends Generator {
         let list = [
             ['src/modules/index/_index.js', `src/modules/${this.options.mpage}/${this.options.mpage}.js`],
             ['src/modules/index/_index.vue', `src/modules/${this.options.mpage}/${this.options.mpage}.vue`],
-            ['src/modules/index/index.html', `src/modules/${this.options.mpage}/${this.options.mpage}.html`],
+            ['src/modules/index/_index.html', `src/modules/${this.options.mpage}/${this.options.mpage}.html`],
         ]
         list.forEach(item => {
             let fromFile = item[0];
@@ -28,7 +31,9 @@ module.exports = class extends Generator {
                 this.templatePath(fromFile),
                 this.destinationPath(toFile),
                 // 将配置参数带过去
-                { mpage: this.options.mpage }
+                {
+                    mpage: this.options.mpage
+                }
             );
         })
     }

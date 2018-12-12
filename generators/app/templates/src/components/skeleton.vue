@@ -3,10 +3,10 @@
     <div class="skeleton-nav"></div>
     <div class="skeleton-swiper"></div>
     <ul class="skeleton-tabs">
-      <li v-for="i in 8" class="skeleton-tabs-item"><span></span></li>
+      <li v-for="i in 8" class="skeleton-tabs-item" :key='i'><span></span></li>
     </ul>
     <div class="skeleton-banner"></div>
-    <div v-for="i in 6" class="skeleton-productions"></div>
+    <div v-for="i in 6" class="skeleton-productions" :key='i'></div>
   </div>
 </template>
 
