@@ -3,6 +3,7 @@ import { baseUrl } from './env.js'
 import qs from 'qs'
 const ax = axios.create({
   baseURL: baseUrl,
+  timeout: 10000,
   withCredentials: true // 允许携带cookie
 })
 

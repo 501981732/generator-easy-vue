@@ -39,7 +39,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     //版本号由rd来控制 故去掉chunkhash
     // filename: utils.assetsPath('js/[name].[chunkhash].js'),
     filename: utils.assetsPath('js/[name].js'),
-    chunkFilename: utils.assetsPath('js/[id].[chunkhash:7].js')
+    chunkFilename: utils.assetsPath('js/[name].[chunkhash:7].js')
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html

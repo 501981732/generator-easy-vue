@@ -1,0 +1,191 @@
+// 箭头
+
+.down-arrow(@color:#bec8ca) {
+    position: relative;
+    &:after {
+        content: "";
+        border-left: 2px solid @color;
+        border-top: 2px solid @color;
+        transform: translateY(-50%) rotate(-135deg);
+        //为了更准确的居中,添加translateY(-50%),即上移自身的50%。注意必须写在rotate前面,否则坐标系被旋转后再平移达不到想要的效果
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        position: absolute;
+        top: 50%;
+        right: 2px;
+    }
+}
+.up-arrow(@color:#bec8ca) {
+    position: relative;
+    &:after {
+        content: "";
+        border-left: 2px solid @color;
+        border-top: 2px solid @color;
+        transform: translateY(-50%) rotate(45deg);
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        position: absolute;
+        top: 50%;
+        right: 2px;
+    }
+}
+.right-arrow(@color:#bec8ca) {
+    position: relative;
+    &:after {
+        content: "";
+        border-left: 2px solid @color;
+        border-top: 2px solid @color;
+        transform: translateY(-50%) rotate(135deg);
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        position: absolute;
+        top: 50%;
+        right: 2px;
+    }
+}
+// m 一像素边框
+.one-px-top(@color:#fff) {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        height: 1px;
+        width: 100%;
+        background-color: @color;
+        transform: scaleY(0.5);
+    }
+}
+
+.one-px-bottom(@color:#fff) {
+    position: relative;
+
+    &:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background-color: @color;
+        transform: scaleY(0.5);
+    }
+}
+
+.one-px-right(@color:#fff) {
+    position: relative;
+
+    &:after {
+        position: absolute;
+        content: "";
+        right: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: @color;
+        transform: scaleX(0.5);
+    }
+}
+
+.one-px-left(@color:#fff) {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: @color;
+        transform: scaleX(0.5);
+    }
+}
+
+.one-px-button(@color:#fff) {
+    position: relative;
+
+    &:after {
+        content: " ";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid @color;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+}
+
+.one-px-box(@color:#fff) {
+    position: relative;
+
+    &:after {
+        content: " ";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid @color;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        box-sizing: border-box;
+        border-radius: 10px;
+        // 事件击穿
+        pointer-events: none;
+    }
+}
+
+// 二倍图 三倍图
+.bg-image(@url) {
+    background-image:~"url('@{url}@2x.png')";
+    @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio:3) {
+        background-image:~"url('@{url}@3x.png')";
+    }
+}
+
+// 角度渐变 三色
+.linear-gradient(@deg: -180deg, @start: #4771ec,@startPos: 0%,@minddle: #4768ea, @middlePos: 20%, @end: #2731cd, @endPos: 100%) {
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=@start, endColorStr=@end);
+    background: linear-gradient(
+        @deg,
+        @start @startPos,
+        @minddle @middlePos,
+        @end @endPos
+    );
+}
+// 两色渐变 两色
+.linear-gradient2(@deg: to bottom, @start: #4771ec,@startPos: 0%, @end: #2731cd, @endPos: 100%) {
+    filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=@start, endColorStr=@end);
+    background: linear-gradient(
+        @deg,
+        @start @startPos,
+        @end @endPos
+    );
+}
+
+.c-zoom-time(@time: 4s,@type: ease-in-out, @delay:0s) {
+    animation: zoomIn2 @time @type @delay infinite;
+}
+@keyframes zoomIn2 {
+  from {
+    transform: scale(.95);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(.95);
+  }
+}

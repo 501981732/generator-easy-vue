@@ -32,6 +32,8 @@
 
     动态链接库修改在config/dll.lib.dependencies.js 默认只用了vue，vue-router
 
+0.3.0 实战之后的优化以及埋坑 css打包大小优化 常用css方案(渐变兼容IE9 一像素边框 二倍图三倍图 iphoneX适配 等)  axios配置优化 增加常见组件库 插件库 工具库
+
 ps: 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X   sad💔...
 ```
 
@@ -135,7 +137,9 @@ postcss-aspect-ratio-mini
 postcss-px-to-viewport
 postcss-write-svg
 postcss-cssnext
-postcss-viewport-units
+style-resources-loader
+postcss-viewport-units 已弃用
+style
 cssnano
 cssnano-preset-advanced
 babel-eslint eslint eslint-config-standard eslint-friendly-formatter eslint-loader eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard eslint-plugin-vue
@@ -190,6 +194,8 @@ cross-env
 │   ├── modules                                  //多页面
 │   ├── pages
 │   ├── plugin                                   //手写vue插件
+│   ├── filters                                  //过滤器
+│   ├── direction                                //directions
 │   ├── router
 │   ├── store                                    // 初始化vuex
 │   ├── utils

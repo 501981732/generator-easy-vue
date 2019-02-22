@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { routerBaseUrl } from '@/config/env.js'
 import HelloWorld from '@/pages/HelloWorld'
-// const HelloWorld = () => import('@/pages/HelloWorld')
+// chunkname
+// const index = () => import( /* webpackChunkName: "index" */ '@/pages/index')
 
 Vue.use(Router)
 

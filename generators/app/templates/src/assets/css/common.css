@@ -1,29 +1,147 @@
-.clearfix:after,.clear:before{
+/*//公共样式文件，class或id命名必须以c-为前缀开头*/
+
+.clearfix:after,
+.clear:before {
     display: block;
     height: 0;
     visibility: hidden;
     clear: both;
-    content:".";
+    content: ".";
 }
-.clearfix{
-    // overflow: auto;
+
+.clearfix {
+    /*// overflow: auto;*/
     zoom: 1;
 }
-[clearfix]:after,[clear]:before{
+
+[clearfix]:after,
+[clear]:before {
     display: block;
     height: 0;
     visibility: hidden;
     clear: both;
-    content:".";
+    content: ".";
 }
-[clearfix]{
-    // overflow: auto;
+
+[clearfix] {
+    /*// overflow: auto;*/
     zoom: 1;
 }
 
 .fl {
     float: left;
 }
+
 .fr {
     float: right;
 }
+
+
+.w-10 {
+    width: 10px;
+}
+
+
+.h-10 {
+    height: 10px;
+}
+
+.h-20 {
+    height: 20px;
+}
+
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pl-10 {
+    padding-left: 10px;
+}
+
+.search.icon {
+    color: #000;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 3px;
+    width: 12px;
+    height: 12px;
+    border: solid 1px currentColor;
+    border-radius: 100%;
+    transform: rotate(-45deg);
+}
+
+.search.icon:before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    height: 6px;
+    width: 1px;
+    background-color: currentColor;
+}
+
+/*// 超出部分...*/
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*// 垂直居中*/
+.center_table {
+    display: table;
+}
+
+.center_cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.no-scrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+/*// 蒙层*/
+.c-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1000;
+}
+/*// 蒙层box居中*/
+.c-center-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 1001;
+    text-align: center;
+}
+
+.gpu {
+    transform: translateZ(0);
+}
+.iphoneX {
+    /*meta viewport-fit=cover*/
+    box-sizing: content-box;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+

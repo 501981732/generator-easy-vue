@@ -160,12 +160,19 @@ module.exports = class extends Generator {
             'config/dev.env.js',
             'config/prod.env.js',
             'src/assets/css/common.css',
+            'src/assets/css/animation.css',
             'src/assets/js/.gitkeep',
-            'src/assets/img/.gitkeep',
+            'src/assets/img/',
             'src/assets/logo.png',
             'src/components/global.js',
+            'src/components/Alert.vue',
+            'src/components/Loading.vue',
+            'src/components/Toast.vue',
+            'src/components/Confirm.vue',
             'src/config',
-            'src/mixins/.gitkeep',
+            'src/directions/',
+            'src/filters/',
+            'src/mixins/',
             'src/plugins/',
             'src/router/',
             'src/utils/',
@@ -187,7 +194,7 @@ module.exports = class extends Generator {
             ['_postcssrc.js', '.postcssrc.js'],
             ['config/_index.js', 'config/index.js'],
             ['_index.html', 'index.html'],
-            ['src/components/_x-alert.vue', 'src/components/x-alert.vue'],
+            // ['src/components/_x-alert.vue', 'src/components/x-alert.vue'],
             ['src/pages/_HelloWorld.vue', 'src/pages/HelloWorld.vue'],
             ['build/_webpack.base.conf.js', 'build/webpack.base.conf.js'],
             ['build/_webpack.dev.conf.js', 'build/webpack.dev.conf.js'],
@@ -198,6 +205,8 @@ module.exports = class extends Generator {
         // this.props.test && target.push('test/index.spec.js')
         this.props.reset == 'reset.css' && target.push('src/assets/css/reset.css')
         this.props.reset == 'normalize.css' && target.push('src/assets/css/normalize.css')
+        // less处理 全局引入
+        this.props.cssPrepeocessor === 'less' && target.push('src/assets/css/vars.less','src/assets/css/mixins.less')
         this.props.layout == 'vw' && target.push('src/components/vwDemo.vue')
         this.props.vuex && target.push('src/store')
         this.props.skeleton && target.push('build/webpack.skeleton.conf.js',
@@ -209,6 +218,7 @@ module.exports = class extends Generator {
         this.props.projectType == 'MPA' && target.push('src/modules/index/index.html', 'src/modules/index/index.vue', ['src/modules/index/_index.js', 'src/modules/index/index.js'])
         // eslint
         this.props.eslint && target.push('.eslintignore', '.eslintrc.js')
+
         // dns
         // if (this.props.dns) {
         //     this.props.dnsArray = this.props.split(',')

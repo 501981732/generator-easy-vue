@@ -9,9 +9,9 @@
         "excludePattern": "(^|\\/|\\\\)_"
     },
     "plugins": [
-        "node_modules/jsdoc-vue",
-        "plugins/markdown",
-        "plugins/summarize"
+        "node_modules/jsdoc-vue"
+        // "plugins/markdown",
+        // "plugins/summarize"
     ],
     "markdown": {
 

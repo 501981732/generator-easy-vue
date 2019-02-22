@@ -80,6 +80,7 @@ yo easy-vue:mpage pageName  一键生成mutil-page(if you choose MPA)
 0.2.3 开启动态链接库dll并自动插入到模板中新增插件 DllPlugin,DllReferencePlugin,html-webpack-include-assets-plugin,cross-env
 动态链接库修改在config/dll.lib.dependencies.js 默认只用了vue，vue-router
 
+0.3.0 实战之后的优化以及埋坑 css打包大小优化 常用css方案(渐变兼容IE9 一像素边框 二倍图三倍图 iphoneX适配 等)  axios配置优化 增加常见组件库 插件库 工具库
 ps: 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X   sad💔...
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
@@ -124,6 +125,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 │   ├── modules                                  //多页面
 │   ├── pages
 │   ├── plugin                                   //手写vue插件
+│   ├── filters                                  //过滤器
+│   ├── direction                                //directions
 │   ├── router
 │   ├── store                                    // 初始化vuex
 │   ├── utils

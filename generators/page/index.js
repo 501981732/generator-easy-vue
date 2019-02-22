@@ -1,3 +1,4 @@
+/* eslint-disable */
 const chalk = require('chalk');
 const yosay = require('yosay');
 const Generator = require('yeoman-generator');
@@ -12,7 +13,7 @@ module.exports = class extends Generator {
     this.argument('page', { type: String, required: true });
   }
   prompting() {}
- 
+
   writing() {
     this.fs.copyTpl(
       this.templatePath('src/pages/demo.vue'),
