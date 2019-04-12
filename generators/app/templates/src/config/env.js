@@ -11,6 +11,7 @@ let routerBaseUrl = "";
 if (process.env.NODE_ENV == "development") {
     // baseUrl = ''
 } else if (process.env.NODE_ENV == "test") {
+    // 测试环境->代理proxy
     // baseUrl = "";
     // routerBaseUrl = "";
 } else if (process.env.NODE_ENV == "production") {

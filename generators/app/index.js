@@ -17,6 +17,10 @@ const util = require('util');
  *end - 生成器结束阶段
  */
 module.exports = class extends Generator {
+    // constructor(args,opts) {
+    //     super(args,opts)
+    //     this.appname = 'xxx'
+    // }
     prompting() {
         this.log(
             yosay(`Welcome to the ${chalk.red('easy-vue')} generator! ${chalk.red('多功能搬砖器')}`)
@@ -185,7 +189,9 @@ module.exports = class extends Generator {
             'package-lock.json',
             'build/webpack.dll.conf.js',
             'CHANGELOG.md',
-            'config/dll.libs.dependencies.js'
+            'config/dll.libs.dependencies.js',
+            'config/test.env.js',//增加测试环境
+            'src/eventBus',//增加事件总线
         ]
 
         // fix linux 添加隐藏文件
@@ -199,6 +205,7 @@ module.exports = class extends Generator {
             ['build/_webpack.base.conf.js', 'build/webpack.base.conf.js'],
             ['build/_webpack.dev.conf.js', 'build/webpack.dev.conf.js'],
             ['build/_webpack.prod.conf.js', 'build/webpack.prod.conf.js'],
+            ['build/_webpack.test.conf.js', 'build/webpack.test.conf.js'],////增加测试环境
             ['build/_utils.js', 'build/utils.js', ],
         ]
         // 是否添加单元测试

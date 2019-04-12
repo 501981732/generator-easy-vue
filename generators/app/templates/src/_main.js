@@ -30,6 +30,11 @@ FastClick.attach(document.body);
 <% } else if (layout === 'vw') {%>
 FastClick.attach(document.body);
 <% }%>
+// 时间总线
+import '@/eventBus/eventBus'
+/* eslint-disable no-unused-vars */
+// import vConsole from "vconsole";
+// const insvConsole = new vConsole();
 
 // 自动注入components
 import './components/global.js'

@@ -4,7 +4,20 @@
 
 - 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X
 
+#### 0.3.4
+
+- 路由动画
+
+#### 0.3.3
+
+- 增加测试环境：开发环境接口 -> **mock**,测试环境走 ->**proxy**,生产环境直接打包线上全路径
+- 增加eventBus事件总线，挂载vue 全局调用
+- 修改loading插件样式
+- 请求增加超时提示，超时时间为10s
+- vw布局插件升级postcss-px-to-viewport，支持排除node_momdules插件包,rem布局暂不支持可换插件postcss-px2rem-exclude  or px2rem-exclude
+
 #### 0.3.0
+
 - 按需加载打包 chunkname
 - axios 优化挂载方式
 - less 变量 mixins全局引入，优化app.css体积 style-resources-loader
