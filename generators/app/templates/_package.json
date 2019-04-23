@@ -9,6 +9,7 @@
         "dll:dev": "cross-env NODE_ENV=development webpack --config build/webpack.dll.conf.js",
         "dll:build": "cross-env NODE_ENV=production webpack --config build/webpack.dll.conf.js",
         "dev": "npm run dll:dev && webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+        "dev:test": "npm run dll:dev && webpack-dev-server --inline --progress --config build/webpack.test.conf.js",
         "start": "npm run dev",<% if (eslint) {%>
         "eslint": "eslint --ext .js,.vue src",
         "eslint:fix": "eslint  --fix --ext .js,.vue src",

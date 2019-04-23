@@ -1,4 +1,5 @@
 import axios from 'axios'
+import vue from 'vue'
 import { baseUrl } from './env.js'
 import qs from 'qs'
 import Toast from '@/plugins/toast/index.js'

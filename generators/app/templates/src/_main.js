@@ -31,7 +31,7 @@ FastClick.attach(document.body);
 FastClick.attach(document.body);
 <% }%>
 // 时间总线
-import '@/eventBus/eventBus'
+import '@/eventBus/index.js'
 /* eslint-disable no-unused-vars */
 // import vConsole from "vconsole";
 // const insvConsole = new vConsole();

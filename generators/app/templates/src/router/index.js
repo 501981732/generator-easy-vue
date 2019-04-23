@@ -8,13 +8,21 @@ import HelloWorld from '@/pages/HelloWorld'
 Vue.use(Router)
 
 export default new Router({
-  mode: "hash",
-  base: routerBaseUrl,
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+    mode: "hash",
+    base: routerBaseUrl,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return { x: 0, y: 0 }
+        }
+    },
+    routes: [{
+        path: '/',
+        name: 'HelloWorld',
+        component: HelloWorld，
+        meta: {
+            zIndex: 1
+        }
+    }]
 })

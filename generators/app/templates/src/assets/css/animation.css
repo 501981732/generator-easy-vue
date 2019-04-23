@@ -24,7 +24,14 @@
   opacity: 0;
   transform: translateY(-100px);
 }
-
+.c-fademove-enter-active, .c-fademove-leave-active {
+  transform: translate(-50%, -50%)!important;
+  transition: all .6s ease-out;
+}
+.c-fademove-enter, .c-fademove-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -45%)!important;
+}
 .c-zoom-enter-active {
     animation: zoomInUp .5s;
 }

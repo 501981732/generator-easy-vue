@@ -111,11 +111,11 @@ module.exports = {
         // 告诉 Webpack 使用了哪些动态链接库
         new DllReferencePlugin({
             // 描述 vue 动态链接库的文件内容
-            manifest: require('../static/libs/allvue.manifest.json'),
+            manifest: require('../static/libs/dll_vendor.manifest.json'),
         }),
         //将打包的动态链接库插入到html模板中
         new HtmlWebpackIncludeAssetsPlugin({
-            assets: ["static/libs/dll.allvue.js"],
+            assets: ["static/libs/dll.dll_vendor.js"],
             append: false,
             hash: false,
             publicPath: process.env.NODE_ENV === "production" ?

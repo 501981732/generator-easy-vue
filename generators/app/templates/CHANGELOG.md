@@ -4,7 +4,7 @@
 
 - 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X
 
-#### 0.3.4
+#### 0.3.8
 
 - 路由动画
 
