@@ -20,7 +20,7 @@ export default new Router({
     routes: [{
         path: '/',
         name: 'HelloWorld',
-        component: HelloWorld，
+        component: HelloWorld,
         meta: {
             zIndex: 1
         }

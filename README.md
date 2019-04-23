@@ -69,7 +69,7 @@ ps: 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X   s
     4. 请求增加超时提示，超时时间为10s
     5. vw布局插件升级，支持排除node_momdules插件包,rem布局暂不支持可换插件postcss-px2rem-exclude  or px2rem-exclude
 
-**0.3.8**
+**0.3.9**
     路由动画
 > 初始化项目
 
