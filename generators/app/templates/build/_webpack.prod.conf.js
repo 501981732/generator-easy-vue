@@ -10,6 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin')//净化
+const glob = require('glob-all')
 // skeleton
 // const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
 // const OmmitCSSPlugin = require('./ommit-css-webpack-plugin')
@@ -132,7 +134,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3
     }),
-
+    // css tree shake 净化
+    new PurgecssPlugin({
+        paths: glob.sync(config.build.purgecssPath)
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {

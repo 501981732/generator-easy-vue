@@ -70,7 +70,13 @@ ps: 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X   s
     5. vw布局插件升级，支持排除node_momdules插件包,rem布局暂不支持可换插件postcss-px2rem-exclude  or px2rem-exclude
 
 **0.3.9**
-    路由动画
+
+    路由动画 router zIndex控制层级
+
+**0.4.0**
+    - css tree shake净化css, config/index配置purgecssPath
+    - postcss插件替换 postcss-preset-env替代cssnext 默认stage：2
+
 > 初始化项目
 
 <img src="https://github.com/501981732/generator-easy-vue/blob/master/screenshots/a.gif?raw=true" />
