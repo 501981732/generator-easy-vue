@@ -38,12 +38,6 @@ const webpackConf = {
             }
         }),
 
-        // 压缩打包的文件，
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
         // 插入到html中
         // new AssetsPlugin({
         //     filename: "bundle-config.json",

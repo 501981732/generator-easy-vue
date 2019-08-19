@@ -8,6 +8,7 @@
 
 - 净化css,css tree shake, config/index配置purgecssPath
 - postcss插件替换 postcss-preset-env替代cssnext 默认stage：2
+
 #### 0.3.9
 
 - 路由动画

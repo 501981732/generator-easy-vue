@@ -6,22 +6,30 @@
 ## 功能
 
 ```
-1. 支持可选reset.css normalize.css
-2. 支持可选 rem布局 or vw布局
+1. 支持可选reset.css/normalize.css
+2. 支持可选 rem布局/vw布局
 3. 等比例宽高容器 一像素边框等移动端解决方案
 4. 支持可选less sass css预处理器
-5. 动态加载路由，以及自动注入组件
-6. 预渲染骨架屏
-7. 按需(按照指定的浏览器环境所需)引入polyfill
-8. 提供vue 插件alert demo写法
-9. axios init配置
-10. vuex init配置
-11. vue-router两种模式 history 上线配置base url 填坑
-12. 上线build 自动压缩图片
+5. 动态加载路由
+6. 自动注入全局组件
+7. 预渲染骨架屏
+8. 按需(按照指定的浏览器环境所需)引入polyfill
+9. axios 简易配置 拦截器配置 全局拦截 超时提示等
+10. vuex 简易配置
+11. vue-router简易配置
+12. build 自动压缩图片
 13. 重写image publicPath
 14. 跨域反向代理案例
-15. 单元测试和e2e todo
-16. npm/yarn/bower...
+15. 简易路由动画配置
+16. 常用组件库 插件库(alert confirm loading toast) 工具库
+17. 多页面应用以及一键生成页面命令
+18. 注释自动生成说明文档配置
+19. 增加代码检测工作流 precommit自动美化格式以及修复代码，多人写作避免代码冲突，渐进式lint代码
+20. dns预加载配置
+21. 动态链接库dll配置
+22. css打包大小优化配置 设置全局css等
+23. postcss插件配置
+24. css的tree shake配置
 ```
 
 **0.1.4**
@@ -59,7 +67,7 @@
     2. 常用css方案(渐变兼容IE9 一像素边框 二倍图三倍图 iphoneX适配 等)
     3. axios配置优化
     4. 增加常见组件库 插件库 工具库
-ps: 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X   sad💔...
+ps: 非常棒的preload prefetch and JavaScript源代码优化工具prepack 相关插件不支持webpack3.X  💔 后期考虑升级webpack4+ or在vue-cli3基础上重新配置...
 
 **0.3.3**
 
@@ -67,13 +75,14 @@ ps: 非常棒的preload prefetch and prepack 相关插件不支持webpack3.X   s
     2. 增加eventBus事件总线，挂载vue 全局调用
     3. 修改loading插件样式
     4. 请求增加超时提示，超时时间为10s
-    5. vw布局插件升级，支持排除node_momdules插件包,rem布局暂不支持可换插件postcss-px2rem-exclude  or px2rem-exclude
+    5. vw布局插件升级，支持排除node_momdules插件包,rem布局暂不支持。可换插件postcss-px2rem-exclude  or px2rem-exclude
 
 **0.3.9**
 
     路由动画 router zIndex控制层级
 
 **0.4.0**
+
     - css tree shake净化css, config/index配置purgecssPath
     - postcss插件替换 postcss-preset-env替代cssnext 默认stage：2
 
